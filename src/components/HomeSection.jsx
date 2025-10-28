@@ -1,4 +1,5 @@
 import Spline from "@splinetool/react-spline";
+import { ArrowRight } from "lucide-react";
 
 export default function HomeSection() {
   return (
@@ -6,7 +7,7 @@ export default function HomeSection() {
       {/* Spline full-cover background */}
       <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/BWzdo650n-g-M9RS/scene.splinecode"
+          scene="https://prod.spline.design/O-AdlP9lTPNz-i8a/scene.splinecode"
           style={{ width: "100%", height: "100%" }}
         />
       </div>
@@ -24,17 +25,25 @@ export default function HomeSection() {
           Curate, structure, and personalize learning from trusted sources. Built for students, professionals, and educators.
         </p>
         <div className="mt-8 inline-flex items-center gap-3">
+          {/* Join Waitlist – elevated appearance */}
           <a
-            href="mailto:connect@theaame.com?subject=Get%20Aame&body=Hi%20team%2C%20I%27d%20like%20access%20to%20Aame."
-            className="rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-white/90 transition"
+            href="mailto:connect@theaame.com?subject=Join%20the%20waitlist&body=Hi%20Aame%20team%2C%20please%20add%20me%20to%20the%20waitlist."
+            className="relative inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60"
+            aria-label="Join the waitlist"
           >
-            Get Aame
+            <span className="absolute -inset-px rounded-full bg-gradient-to-r from-white via-orange-200 to-amber-300 opacity-80 blur-md transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
+            <span className="relative rounded-full bg-gradient-to-r from-white via-orange-200 to-amber-300 px-6 py-2.5 text-black shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_1px_2px_0_rgba(0,0,0,0.4)]">
+              Join waitlist
+            </span>
           </a>
+
+          {/* Secondary link */}
           <a
             href="#use-cases"
-            className="rounded-full px-5 py-2.5 text-sm font-medium text-white/80 hover:text-white bg-white/0 hover:bg-white/10 transition"
+            className="group rounded-full px-5 py-2.5 text-sm font-medium text-white/85 hover:text-white bg-white/0 hover:bg-white/10 transition inline-flex items-center gap-2"
           >
             See use cases
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
       </div>

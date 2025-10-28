@@ -39,7 +39,7 @@ export default function SiteFooter({ onOpenScreen, onNavigate }) {
           </div>
 
           <div>
-            <h4 className="font-medium">About</h4>
+            <h4 className="font-medium">Enterprise</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
               <li>
                 <button className="hover:text-white" onClick={() => onNavigate?.("about#about")}>About</button>
