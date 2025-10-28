@@ -6,7 +6,7 @@ import SiteFooter from "./components/SiteFooter";
 
 function App() {
   const [route, setRoute] = useState("home");
-  const [screen, setScreen] = useState(null); // { key, title }
+  const [screen, setScreen] = useState(null); // { key }
 
   const onNavigate = (key) => setRoute(key);
   const openScreen = (key) => setScreen({ key });
@@ -16,19 +16,19 @@ function App() {
     switch (screen?.key) {
       case "use-cases-info":
         return {
-          title: "Use Cases",
+          title: "Use cases",
           body: (
-            <div className="space-y-6 text-gray-700">
+            <div className="space-y-6 text-white/80">
               <div>
-                <h4 className="font-semibold text-gray-900">Study Prep</h4>
+                <h4 className="font-semibold text-white">Study prep</h4>
                 <p className="mt-1">
-                  Students can learn by syllabus, competitive exams, or skills/job-role based courses. Aame structures a clear path with curated videos, papers, and web references.
+                  Learn by syllabus, competitive exams, or skills/job roles. Aame structures clear paths with curated videos, papers, and links.
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">Upskilling</h4>
+                <h4 className="font-semibold text-white">Upskilling</h4>
                 <p className="mt-1">
-                  Professionals upgrade their careers through targeted skill advancements. Aame even teaches how to use other AI tools by building hands-on, real-time courses.
+                  Professionals advance with targeted, project-aligned tracks. Aame also teaches how to use other AI tools via hands-on courses.
                 </p>
               </div>
             </div>
@@ -38,20 +38,20 @@ function App() {
         return {
           title: "Aame for Enterprise",
           body: (
-            <p className="text-gray-700">
-              Aame is a professional upskilling AI—think of it like a capable AI coach. Team members map career goals and Aame generates courses aligned with projects, stacks, and strategic targets.
+            <p className="text-white/80">
+              A capable AI coach for teams. Map goals and generate role-based programs aligned with projects, stacks, and strategy.
             </p>
           ),
         };
       case "enterprise-guide":
         return {
-          title: "Enterprise Guide",
+          title: "Enterprise guide",
           body: (
-            <div className="space-y-4 text-gray-700">
+            <div className="space-y-4 text-white/80">
               <p>
-                Leaders describe active projects and constraints. Aame designs role-based tracks granting every employee access to 6 core skills plus a long-term, year-long program.
+                Describe projects and constraints; Aame designs tracks granting each employee access to core skills and long-term plans.
               </p>
-              <ul className="list-disc pl-5 space-y-1">
+              <ul className="list-disc pl-5 space-y-1 marker:text-white/60">
                 <li>Role and project aligned skill plans</li>
                 <li>Citations and links to source materials</li>
                 <li>Auto-generated presentations and check-ins</li>
@@ -63,8 +63,8 @@ function App() {
         return {
           title: "Security",
           body: (
-            <p className="text-gray-700">
-              Custom security deployments available. Data access rules, SSO, and governance can be tailored to your enterprise needs.
+            <p className="text-white/80">
+              Custom security deployments, fine-grained access, SSO, and governance tailored to enterprise requirements.
             </p>
           ),
         };
@@ -72,7 +72,7 @@ function App() {
         return {
           title: "Enterprise FAQ",
           body: (
-            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+            <ul className="list-disc pl-5 space-y-2 text-white/80 marker:text-white/60">
               <li>Deployment options: cloud or private</li>
               <li>Integrations: SSO, LMS, Confluence, Drive</li>
               <li>Support: guided onboarding, SLAs</li>
@@ -83,7 +83,7 @@ function App() {
         return {
           title: "AIM Aame",
           body: (
-            <blockquote className="text-xl font-medium text-gray-800">
+            <blockquote className="text-xl font-medium text-white">
               “We are building education for anyone curious enough to ask and brave enough to try—where intelligence meets access.”
             </blockquote>
           ),
@@ -92,18 +92,18 @@ function App() {
         return {
           title: "Pricing",
           body: (
-            <div className="space-y-3 text-gray-700">
-              <div className="rounded-lg border p-4">
-                <h4 className="font-semibold">Learner — $50</h4>
-                <ul className="list-disc pl-5 mt-1 space-y-1 text-sm">
+            <div className="grid gap-4 text-white/80">
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <h4 className="font-semibold text-white">Learner — $50</h4>
+                <ul className="list-disc pl-5 mt-1 space-y-1 text-sm marker:text-white/60">
                   <li>Curated learning paths</li>
                   <li>Source citations and links</li>
                   <li>Assessments after topics</li>
                 </ul>
               </div>
-              <div className="rounded-lg border p-4">
-                <h4 className="font-semibold">Enterprise — Custom</h4>
-                <ul className="list-disc pl-5 mt-1 space-y-1 text-sm">
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <h4 className="font-semibold text-white">Enterprise — Custom</h4>
+                <ul className="list-disc pl-5 mt-1 space-y-1 text-sm marker:text-white/60">
                   <li>Org-wide skill maps</li>
                   <li>Private deployments and SSO</li>
                   <li>Admin analytics and SLAs</li>
@@ -121,10 +121,10 @@ function App() {
         return {
           title: "FAQ's",
           body: (
-            <ul className="list-disc pl-5 space-y-2 text-gray-700">
-              <li>What sources do you use? YouTube, papers, reputable web content.</li>
-              <li>How often is content refreshed? Continuously with new signals.</li>
-              <li>Do you support exams? Yes—competitive exams and university syllabi.</li>
+            <ul className="list-disc pl-5 space-y-2 text-white/80 marker:text-white/60">
+              <li>Sources include YouTube, papers, reputable web content.</li>
+              <li>Content is refreshed continuously with new signals.</li>
+              <li>We support competitive exams and university syllabi.</li>
             </ul>
           ),
         };
@@ -132,7 +132,7 @@ function App() {
         return {
           title: "Help Center",
           body: (
-            <div className="space-y-2 text-gray-700">
+            <div className="space-y-2 text-white/80">
               <p>Browse articles and FAQs to get the most out of Aame.</p>
               <p>
                 Can’t find it? Email <a className="underline" href="mailto:connect@theaame.com">connect@theaame.com</a>.
@@ -144,7 +144,7 @@ function App() {
         return {
           title: "Contact Us",
           body: (
-            <div className="space-y-2 text-gray-700">
+            <div className="space-y-2 text-white/80">
               <p>We’d love to hear from you.</p>
               <p>
                 Write to <a className="underline" href="mailto:connect@theaame.com">connect@theaame.com</a>
@@ -156,21 +156,21 @@ function App() {
         return {
           title: "Privacy Policy",
           body: (
-            <p className="text-gray-700">We respect your privacy and handle data with care and transparency.</p>
+            <p className="text-white/80">We respect your privacy and handle data with care and transparency.</p>
           ),
         };
       case "legal-terms":
         return {
           title: "Terms of Service",
           body: (
-            <p className="text-gray-700">By using Aame you agree to our fair-use and acceptable-use policies.</p>
+            <p className="text-white/80">By using Aame you agree to our fair-use and acceptable-use policies.</p>
           ),
         };
       case "legal-dpa":
         return {
           title: "Data Processing Agreement",
           body: (
-            <p className="text-gray-700">Custom DPA available for enterprises requiring strict compliance.</p>
+            <p className="text-white/80">Custom DPA available for enterprises requiring strict compliance.</p>
           ),
         };
       default:
@@ -179,10 +179,10 @@ function App() {
   }, [screen]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-purple-50">
+    <div className="min-h-screen bg-black">
       <SidebarNav current={route} onNavigate={onNavigate} />
 
-      <main className="pl-56">
+      <main className="pt-16">
         {route === "home" && <HomeSection />}
         {route === "use-cases" && <UseCasesSection />}
         <SiteFooter onOpenScreen={openScreen} />
@@ -190,11 +190,11 @@ function App() {
 
       {screenContent && (
         <div className="fixed inset-0 z-50">
-          <div className="absolute inset-0 bg-black/40" onClick={closeScreen} />
-          <div className="absolute right-0 top-0 h-full w-full sm:w-[600px] bg-white shadow-2xl overflow-y-auto">
-            <div className="p-6 border-b flex items-center justify-between">
-              <h3 className="text-lg font-semibold">{screenContent.title}</h3>
-              <button onClick={closeScreen} className="rounded-md px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200">Close</button>
+          <div className="absolute inset-0 bg-black/60" onClick={closeScreen} />
+          <div className="absolute right-0 top-0 h-full w-full sm:w-[560px] bg-[#0b0b0b] border-l border-white/10 shadow-2xl overflow-y-auto">
+            <div className="p-6 border-b border-white/10 flex items-center justify-between">
+              <h3 className="text-base font-semibold text-white">{screenContent.title}</h3>
+              <button onClick={closeScreen} className="rounded-md px-3 py-1.5 text-sm bg-white/10 text-white hover:bg-white/15">Close</button>
             </div>
             <div className="p-6">{screenContent.body}</div>
           </div>
@@ -222,30 +222,35 @@ function CareerForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Name</label>
-          <input name="name" value={form.name} onChange={onChange} required className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500" />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" name="email" value={form.email} onChange={onChange} required className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500" />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Mobile Number</label>
-          <input name="mobile" value={form.mobile} onChange={onChange} required className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500" />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">LinkedIn Profile</label>
-          <input name="linkedin" value={form.linkedin} onChange={onChange} placeholder="https://linkedin.com/in/username" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500" />
-        </div>
+        <Field label="Name">
+          <input name="name" value={form.name} onChange={onChange} required className="mt-1 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20" />
+        </Field>
+        <Field label="Email">
+          <input type="email" name="email" value={form.email} onChange={onChange} required className="mt-1 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20" />
+        </Field>
+        <Field label="Mobile Number">
+          <input name="mobile" value={form.mobile} onChange={onChange} required className="mt-1 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20" />
+        </Field>
+        <Field label="LinkedIn Profile">
+          <input name="linkedin" value={form.linkedin} onChange={onChange} placeholder="https://linkedin.com/in/username" className="mt-1 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20" />
+        </Field>
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700">Upload Resume</label>
-        <input type="file" onChange={(e) => setResume(e.target.files?.[0] || null)} className="mt-1 block w-full text-sm text-gray-600" />
-        {resume && <p className="text-xs text-gray-500 mt-1">Selected: {resume.name}. You will need to attach this file in your email client.</p>}
+        <label className="block text-sm font-medium text-white">Upload Resume</label>
+        <input type="file" onChange={(e) => setResume(e.target.files?.[0] || null)} className="mt-1 block w-full text-sm text-white/70 file:mr-4 file:rounded-md file:border-0 file:bg-white/10 file:px-3 file:py-2 file:text-white hover:file:bg-white/15" />
+        {resume && <p className="text-xs text-white/60 mt-1">Selected: {resume.name}. Attach this file in your email client.</p>}
       </div>
-      <button type="submit" className="rounded-md bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 text-white font-medium shadow hover:shadow-md">Send Application</button>
+      <button type="submit" className="rounded-md bg-white px-4 py-2 text-black font-medium hover:bg-white/90">Send application</button>
     </form>
+  );
+}
+
+function Field({ label, children }) {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-white">{label}</label>
+      {children}
+    </div>
   );
 }
 

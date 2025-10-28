@@ -2,54 +2,42 @@ import Spline from "@splinetool/react-spline";
 
 export default function HomeSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-[92vh] w-full overflow-hidden bg-[#0A0A0A]">
+      {/* Spline full-cover background */}
       <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/4cHQr84zOGAHOehh/scene.splinecode"
+          scene="https://prod.spline.design/BWzdo650n-g-M9RS/scene.splinecode"
           style={{ width: "100%", height: "100%" }}
         />
       </div>
 
-      {/* Soft gradient glow overlay (non-blocking) */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/60 via-white/20 to-white/80" />
+      {/* Subtle vignette + top gradient to enhance contrast (non-blocking) */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
-      {/* Floating capsule */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="animate-float">
-          <div className="mx-auto max-w-xl">
-            <div className="rounded-full bg-white/90 shadow-2xl ring-1 ring-black/5 px-10 py-8 backdrop-blur-lg">
-              <div className="text-center">
-                <p className="text-xs tracking-widest uppercase text-gray-500">The Aame</p>
-                <h1 className="mt-2 text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-700 via-blue-600 to-orange-500">
-                  AI For Education
-                </h1>
-                <p className="mt-4 text-gray-600">
-                  An intelligent learning companion that curates, structures, and personalizes knowledge from the open web.
-                </p>
-                <div className="mt-6">
-                  <a
-                    href="mailto:connect@theaame.com?subject=Get%20Aame&body=Hi%20Aame%20team%2C%20I%27d%20like%20to%20get%20Aame.%20Please%20share%20the%20download%20link.%20%F0%9F%9A%80"
-                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 text-white font-semibold shadow-lg hover:shadow-xl transition-shadow"
-                  >
-                    Get Aame
-                  </a>
-                </div>
-              </div>
-            </div>
-            <p className="mt-4 text-center text-xs text-gray-500">
-              Hovering aura powered by a real-time 3D animation
-            </p>
-          </div>
+      {/* Centered hero copy */}
+      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-28 pb-24 text-center text-white">
+        <p className="text-xs uppercase tracking-[0.25em] text-white/70">Introducing</p>
+        <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight">
+          The AI for Education
+        </h1>
+        <p className="mt-4 text-base sm:text-lg text-white/70">
+          Curate, structure, and personalize learning from trusted sources. Built for students, professionals, and educators.
+        </p>
+        <div className="mt-8 inline-flex items-center gap-3">
+          <a
+            href="mailto:connect@theaame.com?subject=Get%20Aame&body=Hi%20team%2C%20I%27d%20like%20access%20to%20Aame."
+            className="rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-white/90 transition"
+          >
+            Get Aame
+          </a>
+          <a
+            href="#use-cases"
+            className="rounded-full px-5 py-2.5 text-sm font-medium text-white/80 hover:text-white bg-white/0 hover:bg-white/10 transition"
+          >
+            See use cases
+          </a>
         </div>
       </div>
-
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-      `}</style>
     </section>
   );
 }

@@ -1,72 +1,49 @@
 export default function UseCasesSection() {
   return (
-    <section className="min-h-screen px-6 md:px-12 py-16">
-      <header className="max-w-5xl mx-auto mb-12">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
-          Use Cases
-        </h2>
-        <p className="mt-3 text-gray-600">
-          Real examples of how Aame builds courses and presentations from real-time sources like YouTube, research papers, the open web, and target company or exam data.
-        </p>
-      </header>
-
-      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {/* Professional Upskilling */}
-        <Card
-          title="Professional Upskilling"
-          subtitle="Skill and job-role based course creation"
-          sources={["YouTube", "Research Papers", "Web Search", "Target Company Data"]}
-          videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
-          description="Aame curates a practical curriculum, gathering videos, papers, and relevant resources. It also links recommended YouTube videos and source papers directly inside the course."
-        />
-
-        {/* Student Preparation */}
-        <Card
-          title="Student Preparation"
-          subtitle="Competitive exam oriented course creation"
-          sources={["YouTube", "Research Papers", "Web Search", "Test Papers", "Target Exam Data"]}
-          videoSrc="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-          description="Aame builds a topic-by-topic plan, collecting past papers, lectures, and study guides. It keeps the course updated with new, high-quality sources over time."
-        />
-
-        {/* Professor Assistance */}
-        <Card
-          title="Professor Assistance"
-          subtitle="University-grade AI presentation generation"
-          sources={["Syllabi", "University Repos", "Research Papers", "Web Sources"]}
-          videoSrc="https://www.w3schools.com/html/movie.mp4"
-          description="Automatically creates clean, structured presentations for lectures with citations and speaker notes that reference reputable sources."
-        />
-
-        {/* AAME is Accurate */}
-        <div className="rounded-2xl border border-gray-200 p-6 bg-white/70 backdrop-blur-sm">
-          <h3 className="text-xl font-semibold">AAME is Accurate</h3>
-          <p className="mt-2 text-gray-600">
-            After each topic, Aame generates quick assessments to verify understanding. Here are snapshots of topic check-ins and mini tests.
+    <section id="use-cases" className="relative bg-black text-white py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <header className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Use cases</h2>
+          <p className="mt-3 text-white/70 max-w-3xl">
+            How Aame designs courses and presentations from YouTube, research papers, the open web, and target data for roles and exams.
           </p>
-          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-100">
-                <div className="w-full h-full flex items-center justify-center text-xs text-gray-500">
-                  Assessment Photo {i + 1}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+        </header>
 
-      <div className="max-w-6xl mx-auto mt-10 text-sm text-gray-500">
-        Note: Example videos are for demonstration only.
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card
+            title="Professional upskilling"
+            subtitle="Skill and job-role aligned tracks"
+            chips={["YouTube", "Research Papers", "Web", "Company Data"]}
+            videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
+            description="Practical, source-linked curricula that evolve with your projects and stack."
+          />
+          <Card
+            title="Student preparation"
+            subtitle="Competitive exams and syllabi"
+            chips={["YouTube", "Papers", "Web", "Past Papers", "Exam Data"]}
+            videoSrc="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+            description="Topic-by-topic plans with assessments and trusted references."
+          />
+          <Card
+            title="Professor assistance"
+            subtitle="Auto-generated lectures and decks"
+            chips={["Syllabi", "Repos", "Papers", "Web Sources"]}
+            videoSrc="https://www.w3schools.com/html/movie.mp4"
+            description="Clean, cited presentations with speaker notes and links."
+          />
+          <Accuracy />
+        </div>
+
+        <p className="mt-10 text-sm text-white/60">Demo videos are placeholders. Replace with your assets.</p>
       </div>
     </section>
   );
 }
 
-function Card({ title, subtitle, sources, videoSrc, description }) {
+function Card({ title, subtitle, chips, videoSrc, description }) {
   return (
-    <div className="rounded-2xl border border-gray-200 overflow-hidden bg-white/70 backdrop-blur-sm">
-      <div className="aspect-video bg-black/5">
+    <div className="group rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <div className="aspect-video bg-black/30">
         <video
           src={videoSrc}
           className="w-full h-full object-cover"
@@ -78,18 +55,33 @@ function Card({ title, subtitle, sources, videoSrc, description }) {
       </div>
       <div className="p-6">
         <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-gray-600 mt-1">{subtitle}</p>
+        <p className="text-white/70 mt-1">{subtitle}</p>
         <div className="mt-3 flex flex-wrap gap-2">
-          {sources.map((s) => (
-            <span
-              key={s}
-              className="text-xs px-2.5 py-1 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white"
-            >
-              {s}
+          {chips.map((c) => (
+            <span key={c} className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-white/80 border border-white/10">
+              {c}
             </span>
           ))}
         </div>
-        <p className="mt-4 text-gray-700">{description}</p>
+        <p className="mt-4 text-white/80">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+function Accuracy() {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+      <h3 className="text-xl font-semibold">Aame is accurate</h3>
+      <p className="mt-2 text-white/70">
+        Topic check-ins and mini-tests verify understanding with quick feedback.
+      </p>
+      <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className="aspect-[4/3] rounded-lg bg-gradient-to-br from-red-500/10 via-orange-500/10 to-amber-400/10 border border-white/10 flex items-center justify-center text-xs text-white/60">
+            Assessment {i + 1}
+          </div>
+        ))}
       </div>
     </div>
   );
