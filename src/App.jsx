@@ -3,6 +3,7 @@ import SidebarNav from "./components/SidebarNav";
 import HomeSection from "./components/HomeSection";
 import UseCasesSection from "./components/UseCasesSection";
 import SiteFooter from "./components/SiteFooter";
+import AboutPage from "./components/AboutPage";
 
 function App() {
   const [route, setRoute] = useState("home");
@@ -195,9 +196,15 @@ function App() {
       <SidebarNav current={route} onNavigate={onNavigate} />
 
       <main className="pt-14 md:pt-0 md:pl-64">
-        {route === "home" && <HomeSection />}
+        {route === "home" && (
+          <>
+            <HomeSection />
+            <UseCasesSection />
+          </>
+        )}
         {route === "use-cases" && <UseCasesSection />}
-        <SiteFooter onOpenScreen={openScreen} />
+        {route === "about" && <AboutPage />}
+        <SiteFooter onOpenScreen={openScreen} onNavigate={onNavigate} />
       </main>
 
       {screenContent && (

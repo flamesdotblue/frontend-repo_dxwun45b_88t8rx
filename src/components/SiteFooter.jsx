@@ -1,6 +1,6 @@
 import { Mail, Instagram, Linkedin, Twitter } from "lucide-react";
 
-export default function SiteFooter({ onOpenScreen }) {
+export default function SiteFooter({ onOpenScreen, onNavigate }) {
   return (
     <footer className="bg-black text-white border-t border-white/10">
       <div className="mx-auto max-w-7xl px-6 py-12">
@@ -31,7 +31,7 @@ export default function SiteFooter({ onOpenScreen }) {
             <h4 className="font-medium">Use cases</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("use-cases-info")}>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("use-cases-info")}>
                   Overview
                 </button>
               </li>
@@ -39,19 +39,19 @@ export default function SiteFooter({ onOpenScreen }) {
           </div>
 
           <div>
-            <h4 className="font-medium">Enterprise</h4>
+            <h4 className="font-medium">About</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("enterprise-aame")}>About</button>
+                <button className="hover:text-white" onClick={() => onNavigate?.("about")}>About</button>
               </li>
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("enterprise-guide")}>Enterprise Guide</button>
+                <button className="hover:text-white" onClick={() => onNavigate?.("about")}>Enterprise Guide</button>
               </li>
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("enterprise-security")}>Security</button>
+                <button className="hover:text-white" onClick={() => onNavigate?.("about")}>Security</button>
               </li>
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("enterprise-faq")}>FAQ</button>
+                <button className="hover:text-white" onClick={() => onNavigate?.("about")}>FAQ</button>
               </li>
             </ul>
           </div>
@@ -60,16 +60,16 @@ export default function SiteFooter({ onOpenScreen }) {
             <h4 className="font-medium">Resources</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("resources-aim")}>AIM Aame</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("resources-aim")}>AIM Aame</button>
               </li>
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("resources-pricing")}>Pricing</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("resources-pricing")}>Pricing</button>
               </li>
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("resources-career")}>Career</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("resources-career")}>Career</button>
               </li>
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("resources-faq")}>FAQ's</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("resources-faq")}>FAQ's</button>
               </li>
             </ul>
           </div>
@@ -78,22 +78,22 @@ export default function SiteFooter({ onOpenScreen }) {
             <h4 className="font-medium">Support</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("support-help")}>Help Center</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("support-help")}>Help Center</button>
               </li>
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("support-contact")}>Contact Us</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("support-contact")}>Contact Us</button>
               </li>
             </ul>
             <h4 className="font-medium mt-6">Legal</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("legal-privacy")}>Privacy Policy</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("legal-privacy")}>Privacy Policy</button>
               </li>
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("legal-terms")}>Terms of Service</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("legal-terms")}>Terms of Service</button>
               </li>
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("legal-dpa")}>Data Processing Agreement</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen?.("legal-dpa")}>Data Processing Agreement</button>
               </li>
             </ul>
           </div>
