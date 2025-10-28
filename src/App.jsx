@@ -182,7 +182,7 @@ function App() {
     <div className="min-h-screen bg-black">
       <SidebarNav current={route} onNavigate={onNavigate} />
 
-      <main className="pt-16">
+      <main className="pt-14 md:pt-0 md:pl-64">
         {route === "home" && <HomeSection />}
         {route === "use-cases" && <UseCasesSection />}
         <SiteFooter onOpenScreen={openScreen} />
