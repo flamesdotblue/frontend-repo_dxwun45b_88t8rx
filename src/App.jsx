@@ -36,11 +36,16 @@ function App() {
         };
       case "enterprise-aame":
         return {
-          title: "Aame for Enterprise",
+          title: "About",
           body: (
-            <p className="text-white/80">
-              A capable AI coach for teams. Map goals and generate role-based programs aligned with projects, stacks, and strategy.
-            </p>
+            <div className="space-y-3 text-white/80">
+              <p>
+                Aame is an education‑first AI companion. We turn messy, real‑world sources into structured, cited learning experiences for students, professionals, and teams.
+              </p>
+              <p>
+                Our approach blends retrieval over trusted sources with transparent reasoning, giving learners confidence and organizations control.
+              </p>
+            </div>
           ),
         };
       case "enterprise-guide":
@@ -170,7 +175,14 @@ function App() {
         return {
           title: "Data Processing Agreement",
           body: (
-            <p className="text-white/80">Custom DPA available for enterprises requiring strict compliance.</p>
+            <div className="space-y-3 text-white/80">
+              <p>
+                Our DPA sets clear controller/processor roles, outlines sub‑processor disclosures, and provides audit support. Security controls include encryption in transit and at rest, environment hardening, and access segregation.
+              </p>
+              <p>
+                We honor data subject rights (access, rectification, erasure) and support retention policies, regional safeguards, and export controls to meet GDPR and sector standards.
+              </p>
+            </div>
           ),
         };
       default:

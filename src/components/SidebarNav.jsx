@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, Layers, Menu, X } from "lucide-react";
+import { Home, Layers, Menu, X, Clock } from "lucide-react";
 
 export default function SidebarNav({ current, onNavigate }) {
   const [open, setOpen] = useState(false);
@@ -31,6 +31,20 @@ export default function SidebarNav({ current, onNavigate }) {
     </nav>
   );
 
+  const WaitlistCTA = () => (
+    <div className="mt-4">
+      <button
+        type="button"
+        className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-white text-black px-3 py-2 text-sm font-medium hover:bg-white/90"
+        aria-label="Join waitlist"
+      >
+        <Clock size={16} />
+        Join Waitlist
+      </button>
+      <p className="mt-2 text-xs text-white/50">Reserved spot — integration coming soon.</p>
+    </div>
+  );
+
   return (
     <>
       {/* Mobile top bar */}
@@ -58,8 +72,9 @@ export default function SidebarNav({ current, onNavigate }) {
             <span className="text-white font-semibold tracking-tight">Aame</span>
           </div>
           <NavList />
-          <div className="mt-auto text-xs text-white/50 px-1">
-            The AI for Education
+          <div className="mt-auto">
+            <WaitlistCTA />
+            <div className="mt-4 text-xs text-white/50 px-1">The AI for Education</div>
           </div>
         </div>
       </aside>
@@ -84,6 +99,9 @@ export default function SidebarNav({ current, onNavigate }) {
             </div>
             <div className="p-3">
               <NavList onItem={() => setOpen(false)} />
+              <div className="mt-6">
+                <WaitlistCTA />
+              </div>
             </div>
           </div>
         </div>

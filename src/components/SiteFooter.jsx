@@ -42,7 +42,7 @@ export default function SiteFooter({ onOpenScreen }) {
             <h4 className="font-medium">Enterprise</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
               <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen("enterprise-aame")}>Aame for Enterprise</button>
+                <button className="hover:text-white" onClick={() => onOpenScreen("enterprise-aame")}>About</button>
               </li>
               <li>
                 <button className="hover:text-white" onClick={() => onOpenScreen("enterprise-guide")}>Enterprise Guide</button>
