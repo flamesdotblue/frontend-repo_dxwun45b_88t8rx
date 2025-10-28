@@ -1,114 +1,54 @@
-import { Mail, Instagram, Linkedin, Twitter } from "lucide-react";
+import React from 'react';
 
-export default function SiteFooter({ onOpenScreen, onNavigate }) {
+function Col({ title, children }) {
   return (
-    <footer className="bg-black text-white border-t border-white/10">
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid md:grid-cols-5 gap-8">
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="h-7 w-7 rounded bg-gradient-to-br from-red-500 via-orange-500 to-amber-400" aria-hidden />
-              <div className="text-lg font-semibold">Aame</div>
-            </div>
-            <p className="mt-2 text-sm text-white/70">The AI for Education</p>
-            <div className="mt-4 flex items-center gap-3 text-white/70">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-white" aria-label="Instagram">
-                <Instagram size={18} />
-              </a>
-              <a href="mailto:connect@theaame.com" className="hover:text-white" aria-label="Email">
-                <Mail size={18} />
-              </a>
-              <a href="https://x.com" target="_blank" rel="noreferrer" className="hover:text-white" aria-label="X">
-                <Twitter size={18} />
-              </a>
-              <a href="https://www.linkedin.com/company/i-am-aame" target="_blank" rel="noreferrer" className="hover:text-white" aria-label="LinkedIn">
-                <Linkedin size={18} />
-              </a>
-            </div>
-          </div>
+    <div>
+      <h4 className="text-white font-semibold mb-3">{title}</h4>
+      <div className="space-y-2 text-sm text-white/80">{children}</div>
+    </div>
+  );
+}
 
-          <div>
-            <h4 className="font-medium">Use cases</h4>
-            <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li>
-                <button className="hover:text-white" onClick={() => onOpenScreen?.("use-cases-info")}>
-                  Overview
-                </button>
-              </li>
-            </ul>
-          </div>
+function FooterLink({ children, to, onNavigate }) {
+  return (
+    <button onClick={() => onNavigate(to)} className="hover:text-white transition-colors block">
+      {children}
+    </button>
+  );
+}
 
-          <div>
-            <h4 className="font-medium">Enterprise</h4>
-            <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("about#about")}>About</button>
-              </li>
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("about#guide")}>Enterprise Guide</button>
-              </li>
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("about#security")}>Security</button>
-              </li>
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("about#faq")}>FAQ</button>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium">Resources</h4>
-            <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("resources#aim")}>AIM Aame</button>
-              </li>
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("resources#pricing")}>Pricing</button>
-              </li>
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("resources#career")}>Career</button>
-              </li>
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("resources#faq")}>FAQ's</button>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium">Support</h4>
-            <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("support#help")}>Help Center</button>
-              </li>
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("support#contact")}>Contact Us</button>
-              </li>
-            </ul>
-            <h4 className="font-medium mt-6">Legal</h4>
-            <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("legal#privacy")}>Privacy Policy</button>
-              </li>
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("legal#terms")}>Terms of Service</button>
-              </li>
-              <li>
-                <button className="hover:text-white" onClick={() => onNavigate?.("legal#dpa")}>Data Processing Agreement</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-10 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="text-sm text-white/60">© {new Date().getFullYear()} Aame. All rights reserved.</div>
-          <div className="flex flex-wrap items-center gap-2">
-            {["ISO 27001", "SOC 2", "GDPR", "FERPA"].map((c) => (
-              <span key={c} className="text-xs px-2.5 py-1 rounded-full border border-white/10 text-white/70 bg-white/5">
-                {c}
-              </span>
-            ))}
-          </div>
-        </div>
+export default function SiteFooter({ onNavigate }) {
+  return (
+    <footer className="relative z-10 border-t border-white/10 bg-black/40">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-2 md:grid-cols-5 gap-8">
+        <Col title="Use cases">
+          <FooterLink to="use-cases#overview" onNavigate={onNavigate}>Overview</FooterLink>
+          <FooterLink to="use-cases#product" onNavigate={onNavigate}>Product</FooterLink>
+          <FooterLink to="use-cases#marketing" onNavigate={onNavigate}>Marketing</FooterLink>
+        </Col>
+        <Col title="Enterprise">
+          <FooterLink to="enterprise#overview" onNavigate={onNavigate}>Overview</FooterLink>
+          <FooterLink to="enterprise#security" onNavigate={onNavigate}>Security</FooterLink>
+          <FooterLink to="enterprise#pricing" onNavigate={onNavigate}>Pricing</FooterLink>
+        </Col>
+        <Col title="Resources">
+          <FooterLink to="resources#guides" onNavigate={onNavigate}>Guides</FooterLink>
+          <FooterLink to="resources#templates" onNavigate={onNavigate}>Templates</FooterLink>
+          <FooterLink to="resources#changelog" onNavigate={onNavigate}>Changelog</FooterLink>
+        </Col>
+        <Col title="Support">
+          <FooterLink to="support#contact" onNavigate={onNavigate}>Contact</FooterLink>
+          <FooterLink to="support#faq" onNavigate={onNavigate}>FAQ</FooterLink>
+          <FooterLink to="support#status" onNavigate={onNavigate}>Status</FooterLink>
+        </Col>
+        <Col title="Legal">
+          <FooterLink to="legal#terms" onNavigate={onNavigate}>Terms</FooterLink>
+          <FooterLink to="legal#privacy" onNavigate={onNavigate}>Privacy</FooterLink>
+          <FooterLink to="legal#compliance" onNavigate={onNavigate}>Compliance</FooterLink>
+        </Col>
+      </div>
+      <div className="border-t border-white/10 py-6 text-center text-xs text-white/50">
+        © {new Date().getFullYear()} Vibe. All rights reserved.
       </div>
     </footer>
   );
