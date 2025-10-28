@@ -74,7 +74,7 @@ export default function AboutPage() {
     <section className="bg-black text-white py-14">
       <div className="mx-auto max-w-6xl px-6">
         <header className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">About</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Enterprise</h1>
           <p className="mt-2 text-white/70 max-w-3xl">
             Explore Aame's mission, deployment guidance, security posture, and answers to common questions—all in one place.
           </p>
